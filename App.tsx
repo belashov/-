@@ -3,11 +3,11 @@ import SliderControl from './components/SliderControl';
 import ResultsDisplay from './components/ResultsDisplay';
 import FanVisual from './components/FanVisual';
 
-// Constants for fan performance calculation based on aerodynamic formulas
-const PERFORMANCE_COEFFICIENT = 2.8; // Dimensionless flow coefficient
-const PRESSURE_COEFFICIENT = 0.7;    // Dimensionless pressure coefficient
+// Constants for fan performance calculation, adjusted for backward-curved blades
+const PERFORMANCE_COEFFICIENT = 3.0; // Dimensionless flow coefficient, higher for efficient backward-curved design
+const PRESSURE_COEFFICIENT = 0.55;   // Dimensionless pressure coefficient, typical for backward-curved blades
 const AIR_DENSITY = 1.2;             // kg/m³
-const BASE_BLADE_COUNT = 9;          // Reference number of blades for pressure coefficient
+const BASE_BLADE_COUNT = 9;          // Reference number of blades for pressure coefficient adjustment
 
 const App: React.FC = () => {
   const [diameter, setDiameter] = useState<number>(400); // Impeller diameter in mm
@@ -46,7 +46,7 @@ const App: React.FC = () => {
               Калькулятор производительности вентилятора
             </h1>
             <p className="text-slate-400 mt-2">
-              Расчет для крышного радиального вентилятора с горизонтальным выбросом
+              Расчет для крышного радиального вентилятора с назад загнутыми лопатками
             </p>
           </header>
 

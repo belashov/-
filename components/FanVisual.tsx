@@ -47,7 +47,8 @@ const FanVisual: React.FC<FanVisualProps> = ({ speed, bladeCount }) => {
           {[...Array(bladeCount)].map((_, i) => (
             <path
               key={i}
-              d="M 50 15 A 35 35 0 0 1 75 30 L 68 32 A 28 28 0 0 0 50 18 Z"
+              // This path is designed to look like a backward-curved blade
+              d="M 50 15 C 30 20, 35 45, 55 48 L 58 43 C 45 40, 40 25, 50 18 Z"
               fill="#64748b"
               transform={`rotate(${i * (360 / bladeCount)} 50 50)`}
             />
